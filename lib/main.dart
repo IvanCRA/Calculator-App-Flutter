@@ -1,3 +1,4 @@
+import 'package:calculator_app/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,10 +23,18 @@ class CalculatorApp extends StatelessWidget {
         body: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
               child: TextField(
-                decoration: InputDecoration(border: InputBorder.none),
-                style: TextStyle(fontSize: 50),
+                controller: TextEditingController(),
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  fillColor: AppColors.primaryColor,
+                  filled: true,
+                ),
+                style: const TextStyle(fontSize: 50),
+                readOnly: true,
+                autofocus: true,
+                showCursor: true,
               ),
             )
           ],
